@@ -1,0 +1,186 @@
+
+
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .photo-card img {
+            width: 100%;
+            height: 300px; /* Aumentato leggermente per dare più respiro */
+            object-fit: cover; /* Ritaglia l'immagine senza deformarla */
+            object-position: center; /* Inquadra il centro della foto */
+            display: block;
+            image-rendering: -webkit-optimize-contrast; /* Migliora la nitidezza su alcuni browser */
+}
+    </style>
+
+    <title>Per Te ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #ff4b5c; --bg: #fff5f6; --terminal-bg: #1e1e1e; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); margin: 0; padding: 20px; color: #333; overflow-x: hidden; }
+        .container { max-width: 600px; margin: 0 auto; text-align: center; }
+        
+        h1 { color: var(--primary); margin-bottom: 10px; font-weight: 600; }
+        #counter { font-weight: 600; color: #555; margin-bottom: 30px; display: block; font-size: 0.9rem; }
+
+        /* --- AGGIUNTO: CSS GALLERIA --- */
+        .gallery-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding: 20px 0;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none; /* Nasconde scrollbar su Firefox */
+        }
+        .gallery-container::-webkit-scrollbar { display: none; } /* Nasconde scrollbar su Chrome/Safari */
+
+        .photo-card {
+            min-width: 80%;
+            scroll-snap-align: center;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            background: white;
+            transition: transform 0.3s;
+        }
+        .photo-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        .photo-caption { padding: 10px; font-size: 0.85rem; font-style: italic; color: #666; }
+        /* ---------------------------- */
+
+        #terminal-container { 
+            display: none; 
+            background: var(--terminal-bg); color: #00ff41; 
+            font-family: 'Fira Code', monospace; padding: 20px; 
+            border-radius: 10px; text-align: left; min-height: 250px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); margin-top: 30px;
+            font-size: 0.9rem; line-height: 1.5;
+        }
+
+        .btn-magic {
+            background: var(--primary); color: white; border: none;
+            padding: 15px 30px; border-radius: 50px; font-size: 1rem;
+            cursor: pointer; transition: transform 0.2s; margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(255, 75, 92, 0.3);
+        }
+        .btn-magic:hover { transform: scale(1.05); }
+        .cursor { display: inline-block; width: 8px; height: 15px; background: #00ff41; animation: blink 1s infinite; margin-left: 5px; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Ciao Christian Mattia Contaldi ❤️</h1>
+    <span id="counter">Caricamento amore in corso...</span>
+
+    <div class="gallery-container">
+        <div class="photo-card">
+            <img src="https://i.postimg.cc/1X1hjqyB/foto1.jpg"tS/foto1. alt="Momento 1">
+            <div class="photo-caption">ti amo sempre di più</div>
+        </div>
+        <div class="photo-card">
+            <img src="https://i.postimg.cc/zvYZcgqj/foto2.jpg" alt="Momento 2">
+            <div class="photo-caption">quando ridiamo quanto rimiamo io e te?</div>
+        </div>
+        <div class="photo-card">
+            <img src="https://i.postimg.cc/prMb6FPQ/foto4.jpg" alt="Momento 3">
+            <div class="photo-caption">sei il mio tutto</div>
+        </div>
+        <div class="photo-card">
+            <img src="https://i.postimg.cc/2yNRKZCx/foto3.jpg" alt="Momento 3">
+            <div class="photo-caption">é per te che lotto</div>
+        </div>
+    </div>
+    <p style="font-size: 0.8rem; color: #999;">(Scorri verso destra per vedere le foto →)</p>
+    
+    <button class="btn-magic" id="startBtn" onclick="startTyping()">Esegui script: amore.sh</button>
+
+    <div id="terminal-container">
+        <div id="terminal-text"></div><span class="cursor"></span>
+    </div>
+</div>
+
+<script>
+    // 1. DATA DI INIZIO 
+    const startDate = new Date(2025, 9, 8); // Anno, Mese (0=Gen, 1=Feb...), Giorno
+
+    function updateCounter() {
+        const now = new Date();
+        const diff = now - startDate;
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const minutes = Math.floor(diff / (1000 * 60 * 60));
+        const seconds = Math.floor(diff / (1000 * 60));
+        document.getElementById('counter').innerText = `Siamo insieme da
+         ${days} giorni,
+          ${minutes} ore,
+           ${seconds} minuti...
+            e ogni secondo che passa ti amo di più! ❤️`;
+    }
+    setInterval(updateCounter, 1000);
+    updateCounter();
+
+    // 2. MESSAGGIO TERMINALE 
+    const message = `> Accessing secure_heart_drive... [OK]
+> Searching for: "Persona preferita"...
+> Result found: Christian Mattia Contaldi ❤️
+> Initializing letter.txt...
+
+"Ehi, lo sai che non sono brava con i discorsi dolci, 
+quindi ho lasciato che fosse il mio codice a parlare per me. 
+
+In questi mesi ho capito che sei la variabile che 
+ha dato finalmente senso a tutto il mio programma. 
+Grazie per essere il mio supporto (e per non crashare 
+mai quando sono stressata!). Apparte gli scherzi,grazie di cuore
+per esserci sempre stato Christian, sembrerá banale ma sei davvero la persona più importante della mia vita,
+non hai idea di come io sia grata di portarti ogni giorno nel mio cuore, sei la mia forza, il mio sorriso, la mia felicità.
+sei la letterina che lasciavo a babbo natale,ogni candelina spenta,ogni stella cadente vista,sei la mia vita.
+ti auguro di trovare ció che ti rende VERAMENTE felice, e spero che io possa essere parte di quella felicità, 
+perché se c'è una cosa che ho capito è che la tua felicità è la mia felicità. 
+non so se riusciró sempre ad amarti in maniera perfetta, sicuramente no..
+ma ti prometto che ti ameró ogni giorno,ogni ora,ogni minuto e istante della mia vita.
+sei il debugger ad ogni mia linea di codice, sei la mia costante in un mondo di variabili, 
+sei il mio algoritmo preferito, sei il mio tutto.
+ti amo chri,piú di quanto io amo la F1,fare questi codici (dopo ti mostro il back-end appena finisce la letterina).
+Spero tu possa sentire tutto l'amore che ho messo in questo codice, perché è tutto per te.
+ti auguro di passare un ottima giornata, e spero che questo piccolo gesto possa farti capire quanto sei amato e apprezzato.
+Buon San Valentino e Buon Compleanno Amore! ❤️"
+
+> end of file.
+> system status: Innamorata di te.
+> location: Ovunque tu sia.`;
+
+    let i = 0;
+    function startTyping() {
+        document.getElementById('startBtn').style.display = 'none';
+        document.getElementById('terminal-container').style.display = 'block';
+        
+        // Scroll automatico verso il terminale per non farlo perdere
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        
+        type();
+    }
+
+    function type() {
+        if (i < message.length) {
+            let char = message.charAt(i);
+            document.getElementById("terminal-text").innerHTML += char === '\n' ? '<br>' : char;
+            i++;
+            setTimeout(type, 45); 
+        }
+    }
+</script>
+
+</body>
+</html>
